@@ -1,0 +1,30 @@
+# An example of ClusterConfig object using an existing VPC:
+apiVersion: eksctl.io/v1alpha5
+kind: NodeGroup
+metadata:
+  name: new_node_group
+  region: eu-central-1
+  
+spec:
+  instanceType: t3.medium
+  desiredCapacity: 1
+  subnets:
+    subnet-0e8490d143c4ed092:
+      availabilityZone: eu-central-1a
+
+
+# apiVersion: eksctl.io/v1alpha5
+# kind: ManagedNodeGroup
+# metadata:
+#   name: new_node_group
+#   region: eu-central-1
+
+#   clusterName: <cluster-name>
+# spec:
+#   nodeType: <node-type>
+#   desiredCapacity: <number-of-nodes>
+#   ssh:
+#     publicKeyPath: <path-to-public-key>
+#   subnets:
+#     <subnet-ids>:
+#       availabilityZone: <availability-zone>
